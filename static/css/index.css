@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+main {
+  flex: 1;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.teaser-description {
+  font-size: 0.9em;
+}
+
+@media screen and (min-width: 1024px) {
+  .teaser figcaption {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
