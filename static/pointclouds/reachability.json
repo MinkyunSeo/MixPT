@@ -1,0 +1,1900 @@
+{
+  "defaultScene": "10203656353524179475",
+  "scenes": [
+    {
+      "id": "10203656353524179475",
+      "label": "10203656353524179475",
+      "kind": "reachability",
+      "count": 21932,
+      "anchor": 10593,
+      "file": "reachability-10203656353524179475.bin",
+      "bytes": 921144,
+      "blocks": [
+        {
+          "number": 1,
+          "order": "Z",
+          "count": 21932,
+          "anchor": 10593,
+          "positionsOffset": 0,
+          "valuesOffset": 263184,
+          "reachable": 1024
+        },
+        {
+          "number": 2,
+          "order": "TZ",
+          "count": 21932,
+          "anchor": 10593,
+          "positionsOffset": 0,
+          "valuesOffset": 285116,
+          "reachable": 3072
+        },
+        {
+          "number": 3,
+          "order": "H",
+          "count": 21932,
+          "anchor": 10593,
+          "positionsOffset": 0,
+          "valuesOffset": 307048,
+          "reachable": 5120
+        },
+        {
+          "number": 4,
+          "order": "TH",
+          "count": 21932,
+          "anchor": 10593,
+          "positionsOffset": 0,
+          "valuesOffset": 328980,
+          "reachable": 7168
+        },
+        {
+          "number": 5,
+          "order": "Z",
+          "count": 21932,
+          "anchor": 10593,
+          "positionsOffset": 0,
+          "valuesOffset": 350912,
+          "reachable": 11264
+        },
+        {
+          "number": 6,
+          "order": "TZ",
+          "count": 21932,
+          "anchor": 10593,
+          "positionsOffset": 0,
+          "valuesOffset": 372844,
+          "reachable": 16384
+        }
+      ],
+      "queries": [
+        {
+          "id": "default",
+          "label": "Default",
+          "anchor": 10593,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 21932,
+              "anchor": 10593,
+              "positionsOffset": 0,
+              "valuesOffset": 263184,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 21932,
+              "anchor": 10593,
+              "positionsOffset": 0,
+              "valuesOffset": 285116,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 21932,
+              "anchor": 10593,
+              "positionsOffset": 0,
+              "valuesOffset": 307048,
+              "reachable": 5120
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 21932,
+              "anchor": 10593,
+              "positionsOffset": 0,
+              "valuesOffset": 328980,
+              "reachable": 7168
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 21932,
+              "anchor": 10593,
+              "positionsOffset": 0,
+              "valuesOffset": 350912,
+              "reachable": 11264
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 21932,
+              "anchor": 10593,
+              "positionsOffset": 0,
+              "valuesOffset": 372844,
+              "reachable": 16384
+            }
+          ]
+        },
+        {
+          "id": "car",
+          "label": "Car",
+          "anchor": 7982,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 21932,
+              "anchor": 7982,
+              "positionsOffset": 0,
+              "valuesOffset": 394776,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 21932,
+              "anchor": 7982,
+              "positionsOffset": 0,
+              "valuesOffset": 416708,
+              "reachable": 4096
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 21932,
+              "anchor": 7982,
+              "positionsOffset": 0,
+              "valuesOffset": 438640,
+              "reachable": 7168
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 21932,
+              "anchor": 7982,
+              "positionsOffset": 0,
+              "valuesOffset": 460572,
+              "reachable": 10240
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 21932,
+              "anchor": 7982,
+              "positionsOffset": 0,
+              "valuesOffset": 482504,
+              "reachable": 12288
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 21932,
+              "anchor": 7982,
+              "positionsOffset": 0,
+              "valuesOffset": 504436,
+              "reachable": 17836
+            }
+          ]
+        },
+        {
+          "id": "building",
+          "label": "Building",
+          "anchor": 12702,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 21932,
+              "anchor": 12702,
+              "positionsOffset": 0,
+              "valuesOffset": 526368,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 21932,
+              "anchor": 12702,
+              "positionsOffset": 0,
+              "valuesOffset": 548300,
+              "reachable": 5120
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 21932,
+              "anchor": 12702,
+              "positionsOffset": 0,
+              "valuesOffset": 570232,
+              "reachable": 9216
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 21932,
+              "anchor": 12702,
+              "positionsOffset": 0,
+              "valuesOffset": 592164,
+              "reachable": 12716
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 21932,
+              "anchor": 12702,
+              "positionsOffset": 0,
+              "valuesOffset": 614096,
+              "reachable": 20908
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 21932,
+              "anchor": 12702,
+              "positionsOffset": 0,
+              "valuesOffset": 636028,
+              "reachable": 21932
+            }
+          ]
+        },
+        {
+          "id": "vegetation",
+          "label": "Vegetation",
+          "anchor": 15309,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 21932,
+              "anchor": 15309,
+              "positionsOffset": 0,
+              "valuesOffset": 657960,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 21932,
+              "anchor": 15309,
+              "positionsOffset": 0,
+              "valuesOffset": 679892,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 21932,
+              "anchor": 15309,
+              "positionsOffset": 0,
+              "valuesOffset": 701824,
+              "reachable": 5120
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 21932,
+              "anchor": 15309,
+              "positionsOffset": 0,
+              "valuesOffset": 723756,
+              "reachable": 8192
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 21932,
+              "anchor": 15309,
+              "positionsOffset": 0,
+              "valuesOffset": 745688,
+              "reachable": 12288
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 21932,
+              "anchor": 15309,
+              "positionsOffset": 0,
+              "valuesOffset": 767620,
+              "reachable": 17836
+            }
+          ]
+        },
+        {
+          "id": "tree-trunk",
+          "label": "Tree Trunk",
+          "anchor": 16605,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 21932,
+              "anchor": 16605,
+              "positionsOffset": 0,
+              "valuesOffset": 789552,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 21932,
+              "anchor": 16605,
+              "positionsOffset": 0,
+              "valuesOffset": 811484,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 21932,
+              "anchor": 16605,
+              "positionsOffset": 0,
+              "valuesOffset": 833416,
+              "reachable": 6144
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 21932,
+              "anchor": 16605,
+              "positionsOffset": 0,
+              "valuesOffset": 855348,
+              "reachable": 10240
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 21932,
+              "anchor": 16605,
+              "positionsOffset": 0,
+              "valuesOffset": 877280,
+              "reachable": 12288
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 21932,
+              "anchor": 16605,
+              "positionsOffset": 0,
+              "valuesOffset": 899212,
+              "reachable": 17836
+            }
+          ]
+        }
+      ],
+      "defaultQuery": "default",
+      "colors": {
+        "reachable": "#a8e05a",
+        "unreachable": "#c6c6c6",
+        "anchor": "#d62728"
+      },
+      "sha256": "6ef97fa0fc51e7507b173b9197a60c6ef6386f6e380453dc25568c3edecd19ff"
+    },
+    {
+      "id": "1024360143612057520",
+      "label": "1024360143612057520",
+      "kind": "reachability",
+      "count": 19181,
+      "anchor": 8145,
+      "file": "reachability-1024360143612057520.bin",
+      "bytes": 805602,
+      "blocks": [
+        {
+          "number": 1,
+          "order": "Z",
+          "count": 19181,
+          "anchor": 8145,
+          "positionsOffset": 0,
+          "valuesOffset": 230172,
+          "reachable": 1024
+        },
+        {
+          "number": 2,
+          "order": "TZ",
+          "count": 19181,
+          "anchor": 8145,
+          "positionsOffset": 0,
+          "valuesOffset": 249353,
+          "reachable": 3072
+        },
+        {
+          "number": 3,
+          "order": "H",
+          "count": 19181,
+          "anchor": 8145,
+          "positionsOffset": 0,
+          "valuesOffset": 268534,
+          "reachable": 5120
+        },
+        {
+          "number": 4,
+          "order": "TH",
+          "count": 19181,
+          "anchor": 8145,
+          "positionsOffset": 0,
+          "valuesOffset": 287715,
+          "reachable": 8192
+        },
+        {
+          "number": 5,
+          "order": "Z",
+          "count": 19181,
+          "anchor": 8145,
+          "positionsOffset": 0,
+          "valuesOffset": 306896,
+          "reachable": 13312
+        },
+        {
+          "number": 6,
+          "order": "TZ",
+          "count": 19181,
+          "anchor": 8145,
+          "positionsOffset": 0,
+          "valuesOffset": 326077,
+          "reachable": 16109
+        }
+      ],
+      "queries": [
+        {
+          "id": "default",
+          "label": "Default",
+          "anchor": 8145,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 19181,
+              "anchor": 8145,
+              "positionsOffset": 0,
+              "valuesOffset": 230172,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 19181,
+              "anchor": 8145,
+              "positionsOffset": 0,
+              "valuesOffset": 249353,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 19181,
+              "anchor": 8145,
+              "positionsOffset": 0,
+              "valuesOffset": 268534,
+              "reachable": 5120
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 19181,
+              "anchor": 8145,
+              "positionsOffset": 0,
+              "valuesOffset": 287715,
+              "reachable": 8192
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 19181,
+              "anchor": 8145,
+              "positionsOffset": 0,
+              "valuesOffset": 306896,
+              "reachable": 13312
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 19181,
+              "anchor": 8145,
+              "positionsOffset": 0,
+              "valuesOffset": 326077,
+              "reachable": 16109
+            }
+          ]
+        },
+        {
+          "id": "car",
+          "label": "Car",
+          "anchor": 8805,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 19181,
+              "anchor": 8805,
+              "positionsOffset": 0,
+              "valuesOffset": 345258,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 19181,
+              "anchor": 8805,
+              "positionsOffset": 0,
+              "valuesOffset": 364439,
+              "reachable": 5120
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 19181,
+              "anchor": 8805,
+              "positionsOffset": 0,
+              "valuesOffset": 383620,
+              "reachable": 8192
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 19181,
+              "anchor": 8805,
+              "positionsOffset": 0,
+              "valuesOffset": 402801,
+              "reachable": 15085
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 19181,
+              "anchor": 8805,
+              "positionsOffset": 0,
+              "valuesOffset": 421982,
+              "reachable": 19181
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 19181,
+              "anchor": 8805,
+              "positionsOffset": 0,
+              "valuesOffset": 441163,
+              "reachable": 19181
+            }
+          ]
+        },
+        {
+          "id": "pedestrian",
+          "label": "Pedestrian",
+          "anchor": 10678,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 19181,
+              "anchor": 10678,
+              "positionsOffset": 0,
+              "valuesOffset": 460344,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 19181,
+              "anchor": 10678,
+              "positionsOffset": 0,
+              "valuesOffset": 479525,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 19181,
+              "anchor": 10678,
+              "positionsOffset": 0,
+              "valuesOffset": 498706,
+              "reachable": 6144
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 19181,
+              "anchor": 10678,
+              "positionsOffset": 0,
+              "valuesOffset": 517887,
+              "reachable": 10240
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 19181,
+              "anchor": 10678,
+              "positionsOffset": 0,
+              "valuesOffset": 537068,
+              "reachable": 13312
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 19181,
+              "anchor": 10678,
+              "positionsOffset": 0,
+              "valuesOffset": 556249,
+              "reachable": 16109
+            }
+          ]
+        },
+        {
+          "id": "building",
+          "label": "Building",
+          "anchor": 7807,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 19181,
+              "anchor": 7807,
+              "positionsOffset": 0,
+              "valuesOffset": 575430,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 19181,
+              "anchor": 7807,
+              "positionsOffset": 0,
+              "valuesOffset": 594611,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 19181,
+              "anchor": 7807,
+              "positionsOffset": 0,
+              "valuesOffset": 613792,
+              "reachable": 8192
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 19181,
+              "anchor": 7807,
+              "positionsOffset": 0,
+              "valuesOffset": 632973,
+              "reachable": 15085
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 19181,
+              "anchor": 7807,
+              "positionsOffset": 0,
+              "valuesOffset": 652154,
+              "reachable": 19181
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 19181,
+              "anchor": 7807,
+              "positionsOffset": 0,
+              "valuesOffset": 671335,
+              "reachable": 19181
+            }
+          ]
+        },
+        {
+          "id": "vegetation",
+          "label": "Vegetation",
+          "anchor": 2394,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 19181,
+              "anchor": 2394,
+              "positionsOffset": 0,
+              "valuesOffset": 690516,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 19181,
+              "anchor": 2394,
+              "positionsOffset": 0,
+              "valuesOffset": 709697,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 19181,
+              "anchor": 2394,
+              "positionsOffset": 0,
+              "valuesOffset": 728878,
+              "reachable": 7168
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 19181,
+              "anchor": 2394,
+              "positionsOffset": 0,
+              "valuesOffset": 748059,
+              "reachable": 12013
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 19181,
+              "anchor": 2394,
+              "positionsOffset": 0,
+              "valuesOffset": 767240,
+              "reachable": 16109
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 19181,
+              "anchor": 2394,
+              "positionsOffset": 0,
+              "valuesOffset": 786421,
+              "reachable": 18157
+            }
+          ]
+        }
+      ],
+      "defaultQuery": "default",
+      "colors": {
+        "reachable": "#a8e05a",
+        "unreachable": "#c6c6c6",
+        "anchor": "#d62728"
+      },
+      "sha256": "b0fe4aea72f1f8c4930caa825493b6a6a900ea5a87cc5e62099c3cc48e281c9e"
+    },
+    {
+      "id": "1505698981571943321",
+      "label": "1505698981571943321",
+      "kind": "reachability",
+      "count": 22963,
+      "anchor": 10759,
+      "file": "reachability-1505698981571943321.bin",
+      "bytes": 964446,
+      "blocks": [
+        {
+          "number": 1,
+          "order": "Z",
+          "count": 22963,
+          "anchor": 10759,
+          "positionsOffset": 0,
+          "valuesOffset": 275556,
+          "reachable": 1024
+        },
+        {
+          "number": 2,
+          "order": "TZ",
+          "count": 22963,
+          "anchor": 10759,
+          "positionsOffset": 0,
+          "valuesOffset": 298519,
+          "reachable": 3072
+        },
+        {
+          "number": 3,
+          "order": "H",
+          "count": 22963,
+          "anchor": 10759,
+          "positionsOffset": 0,
+          "valuesOffset": 321482,
+          "reachable": 7168
+        },
+        {
+          "number": 4,
+          "order": "TH",
+          "count": 22963,
+          "anchor": 10759,
+          "positionsOffset": 0,
+          "valuesOffset": 344445,
+          "reachable": 10240
+        },
+        {
+          "number": 5,
+          "order": "Z",
+          "count": 22963,
+          "anchor": 10759,
+          "positionsOffset": 0,
+          "valuesOffset": 367408,
+          "reachable": 14336
+        },
+        {
+          "number": 6,
+          "order": "TZ",
+          "count": 22963,
+          "anchor": 10759,
+          "positionsOffset": 0,
+          "valuesOffset": 390371,
+          "reachable": 18432
+        }
+      ],
+      "queries": [
+        {
+          "id": "default",
+          "label": "Default",
+          "anchor": 10759,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 22963,
+              "anchor": 10759,
+              "positionsOffset": 0,
+              "valuesOffset": 275556,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 22963,
+              "anchor": 10759,
+              "positionsOffset": 0,
+              "valuesOffset": 298519,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 22963,
+              "anchor": 10759,
+              "positionsOffset": 0,
+              "valuesOffset": 321482,
+              "reachable": 7168
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 22963,
+              "anchor": 10759,
+              "positionsOffset": 0,
+              "valuesOffset": 344445,
+              "reachable": 10240
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 22963,
+              "anchor": 10759,
+              "positionsOffset": 0,
+              "valuesOffset": 367408,
+              "reachable": 14336
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 22963,
+              "anchor": 10759,
+              "positionsOffset": 0,
+              "valuesOffset": 390371,
+              "reachable": 18432
+            }
+          ]
+        },
+        {
+          "id": "car",
+          "label": "Car",
+          "anchor": 6131,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 22963,
+              "anchor": 6131,
+              "positionsOffset": 0,
+              "valuesOffset": 413334,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 22963,
+              "anchor": 6131,
+              "positionsOffset": 0,
+              "valuesOffset": 436297,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 22963,
+              "anchor": 6131,
+              "positionsOffset": 0,
+              "valuesOffset": 459260,
+              "reachable": 6144
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 22963,
+              "anchor": 6131,
+              "positionsOffset": 0,
+              "valuesOffset": 482223,
+              "reachable": 8192
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 22963,
+              "anchor": 6131,
+              "positionsOffset": 0,
+              "valuesOffset": 505186,
+              "reachable": 14336
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 22963,
+              "anchor": 6131,
+              "positionsOffset": 0,
+              "valuesOffset": 528149,
+              "reachable": 18432
+            }
+          ]
+        },
+        {
+          "id": "building",
+          "label": "Building",
+          "anchor": 13812,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 22963,
+              "anchor": 13812,
+              "positionsOffset": 0,
+              "valuesOffset": 551112,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 22963,
+              "anchor": 13812,
+              "positionsOffset": 0,
+              "valuesOffset": 574075,
+              "reachable": 4096
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 22963,
+              "anchor": 13812,
+              "positionsOffset": 0,
+              "valuesOffset": 597038,
+              "reachable": 7168
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 22963,
+              "anchor": 13812,
+              "positionsOffset": 0,
+              "valuesOffset": 620001,
+              "reachable": 10240
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 22963,
+              "anchor": 13812,
+              "positionsOffset": 0,
+              "valuesOffset": 642964,
+              "reachable": 14336
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 22963,
+              "anchor": 13812,
+              "positionsOffset": 0,
+              "valuesOffset": 665927,
+              "reachable": 18432
+            }
+          ]
+        },
+        {
+          "id": "vegetation",
+          "label": "Vegetation",
+          "anchor": 22270,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 22963,
+              "anchor": 22270,
+              "positionsOffset": 0,
+              "valuesOffset": 688890,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 22963,
+              "anchor": 22270,
+              "positionsOffset": 0,
+              "valuesOffset": 711853,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 22963,
+              "anchor": 22270,
+              "positionsOffset": 0,
+              "valuesOffset": 734816,
+              "reachable": 4531
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 22963,
+              "anchor": 22270,
+              "positionsOffset": 0,
+              "valuesOffset": 757779,
+              "reachable": 10240
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 22963,
+              "anchor": 22270,
+              "positionsOffset": 0,
+              "valuesOffset": 780742,
+              "reachable": 16819
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 22963,
+              "anchor": 22270,
+              "positionsOffset": 0,
+              "valuesOffset": 803705,
+              "reachable": 20915
+            }
+          ]
+        },
+        {
+          "id": "truck",
+          "label": "Truck",
+          "anchor": 7254,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 22963,
+              "anchor": 7254,
+              "positionsOffset": 0,
+              "valuesOffset": 826668,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 22963,
+              "anchor": 7254,
+              "positionsOffset": 0,
+              "valuesOffset": 849631,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 22963,
+              "anchor": 7254,
+              "positionsOffset": 0,
+              "valuesOffset": 872594,
+              "reachable": 6144
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 22963,
+              "anchor": 7254,
+              "positionsOffset": 0,
+              "valuesOffset": 895557,
+              "reachable": 8192
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 22963,
+              "anchor": 7254,
+              "positionsOffset": 0,
+              "valuesOffset": 918520,
+              "reachable": 14336
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 22963,
+              "anchor": 7254,
+              "positionsOffset": 0,
+              "valuesOffset": 941483,
+              "reachable": 18432
+            }
+          ]
+        }
+      ],
+      "defaultQuery": "default",
+      "colors": {
+        "reachable": "#a8e05a",
+        "unreachable": "#c6c6c6",
+        "anchor": "#d62728"
+      },
+      "sha256": "4d9f6d87c02d9730075f57c168f885dcb12f1723b025cf8a4f4338ae831bebd6"
+    },
+    {
+      "id": "4246537812751004276",
+      "label": "4246537812751004276",
+      "kind": "reachability",
+      "count": 26641,
+      "anchor": 12247,
+      "file": "reachability-4246537812751004276.bin",
+      "bytes": 1118922,
+      "blocks": [
+        {
+          "number": 1,
+          "order": "Z",
+          "count": 26641,
+          "anchor": 12247,
+          "positionsOffset": 0,
+          "valuesOffset": 319692,
+          "reachable": 1024
+        },
+        {
+          "number": 2,
+          "order": "TZ",
+          "count": 26641,
+          "anchor": 12247,
+          "positionsOffset": 0,
+          "valuesOffset": 346333,
+          "reachable": 5120
+        },
+        {
+          "number": 3,
+          "order": "H",
+          "count": 26641,
+          "anchor": 12247,
+          "positionsOffset": 0,
+          "valuesOffset": 372974,
+          "reachable": 11264
+        },
+        {
+          "number": 4,
+          "order": "TH",
+          "count": 26641,
+          "anchor": 12247,
+          "positionsOffset": 0,
+          "valuesOffset": 399615,
+          "reachable": 17425
+        },
+        {
+          "number": 5,
+          "order": "Z",
+          "count": 26641,
+          "anchor": 12247,
+          "positionsOffset": 0,
+          "valuesOffset": 426256,
+          "reachable": 23569
+        },
+        {
+          "number": 6,
+          "order": "TZ",
+          "count": 26641,
+          "anchor": 12247,
+          "positionsOffset": 0,
+          "valuesOffset": 452897,
+          "reachable": 26641
+        }
+      ],
+      "queries": [
+        {
+          "id": "default",
+          "label": "Default",
+          "anchor": 12247,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 26641,
+              "anchor": 12247,
+              "positionsOffset": 0,
+              "valuesOffset": 319692,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 26641,
+              "anchor": 12247,
+              "positionsOffset": 0,
+              "valuesOffset": 346333,
+              "reachable": 5120
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 26641,
+              "anchor": 12247,
+              "positionsOffset": 0,
+              "valuesOffset": 372974,
+              "reachable": 11264
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 26641,
+              "anchor": 12247,
+              "positionsOffset": 0,
+              "valuesOffset": 399615,
+              "reachable": 17425
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 26641,
+              "anchor": 12247,
+              "positionsOffset": 0,
+              "valuesOffset": 426256,
+              "reachable": 23569
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 26641,
+              "anchor": 12247,
+              "positionsOffset": 0,
+              "valuesOffset": 452897,
+              "reachable": 26641
+            }
+          ]
+        },
+        {
+          "id": "car",
+          "label": "Car",
+          "anchor": 13445,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 26641,
+              "anchor": 13445,
+              "positionsOffset": 0,
+              "valuesOffset": 479538,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 26641,
+              "anchor": 13445,
+              "positionsOffset": 0,
+              "valuesOffset": 506179,
+              "reachable": 5120
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 26641,
+              "anchor": 13445,
+              "positionsOffset": 0,
+              "valuesOffset": 532820,
+              "reachable": 11264
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 26641,
+              "anchor": 13445,
+              "positionsOffset": 0,
+              "valuesOffset": 559461,
+              "reachable": 17425
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 26641,
+              "anchor": 13445,
+              "positionsOffset": 0,
+              "valuesOffset": 586102,
+              "reachable": 23569
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 26641,
+              "anchor": 13445,
+              "positionsOffset": 0,
+              "valuesOffset": 612743,
+              "reachable": 26641
+            }
+          ]
+        },
+        {
+          "id": "pedestrian",
+          "label": "Pedestrian",
+          "anchor": 3180,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 26641,
+              "anchor": 3180,
+              "positionsOffset": 0,
+              "valuesOffset": 639384,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 26641,
+              "anchor": 3180,
+              "positionsOffset": 0,
+              "valuesOffset": 666025,
+              "reachable": 2048
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 26641,
+              "anchor": 3180,
+              "positionsOffset": 0,
+              "valuesOffset": 692666,
+              "reachable": 4096
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 26641,
+              "anchor": 3180,
+              "positionsOffset": 0,
+              "valuesOffset": 719307,
+              "reachable": 7168
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 26641,
+              "anchor": 3180,
+              "positionsOffset": 0,
+              "valuesOffset": 745948,
+              "reachable": 10240
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 26641,
+              "anchor": 3180,
+              "positionsOffset": 0,
+              "valuesOffset": 772589,
+              "reachable": 14336
+            }
+          ]
+        },
+        {
+          "id": "building",
+          "label": "Building",
+          "anchor": 11620,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 26641,
+              "anchor": 11620,
+              "positionsOffset": 0,
+              "valuesOffset": 799230,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 26641,
+              "anchor": 11620,
+              "positionsOffset": 0,
+              "valuesOffset": 825871,
+              "reachable": 2048
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 26641,
+              "anchor": 11620,
+              "positionsOffset": 0,
+              "valuesOffset": 852512,
+              "reachable": 4096
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 26641,
+              "anchor": 11620,
+              "positionsOffset": 0,
+              "valuesOffset": 879153,
+              "reachable": 6144
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 26641,
+              "anchor": 11620,
+              "positionsOffset": 0,
+              "valuesOffset": 905794,
+              "reachable": 10240
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 26641,
+              "anchor": 11620,
+              "positionsOffset": 0,
+              "valuesOffset": 932435,
+              "reachable": 16384
+            }
+          ]
+        },
+        {
+          "id": "vegetation",
+          "label": "Vegetation",
+          "anchor": 10635,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 26641,
+              "anchor": 10635,
+              "positionsOffset": 0,
+              "valuesOffset": 959076,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 26641,
+              "anchor": 10635,
+              "positionsOffset": 0,
+              "valuesOffset": 985717,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 26641,
+              "anchor": 10635,
+              "positionsOffset": 0,
+              "valuesOffset": 1012358,
+              "reachable": 5120
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 26641,
+              "anchor": 10635,
+              "positionsOffset": 0,
+              "valuesOffset": 1038999,
+              "reachable": 10257
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 26641,
+              "anchor": 10635,
+              "positionsOffset": 0,
+              "valuesOffset": 1065640,
+              "reachable": 19473
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 26641,
+              "anchor": 10635,
+              "positionsOffset": 0,
+              "valuesOffset": 1092281,
+              "reachable": 25617
+            }
+          ]
+        }
+      ],
+      "defaultQuery": "default",
+      "colors": {
+        "reachable": "#a8e05a",
+        "unreachable": "#c6c6c6",
+        "anchor": "#d62728"
+      },
+      "sha256": "47aa4e320eef7895b0e7a1bcb8bfa7fcaa6355b4235afc6d99e61391d15296b8"
+    },
+    {
+      "id": "967082162553397800",
+      "label": "967082162553397800",
+      "kind": "reachability",
+      "count": 31045,
+      "anchor": 15136,
+      "file": "reachability-967082162553397800.bin",
+      "bytes": 1303890,
+      "blocks": [
+        {
+          "number": 1,
+          "order": "Z",
+          "count": 31045,
+          "anchor": 15136,
+          "positionsOffset": 0,
+          "valuesOffset": 372540,
+          "reachable": 1024
+        },
+        {
+          "number": 2,
+          "order": "TZ",
+          "count": 31045,
+          "anchor": 15136,
+          "positionsOffset": 0,
+          "valuesOffset": 403585,
+          "reachable": 2048
+        },
+        {
+          "number": 3,
+          "order": "H",
+          "count": 31045,
+          "anchor": 15136,
+          "positionsOffset": 0,
+          "valuesOffset": 434630,
+          "reachable": 5120
+        },
+        {
+          "number": 4,
+          "order": "TH",
+          "count": 31045,
+          "anchor": 15136,
+          "positionsOffset": 0,
+          "valuesOffset": 465675,
+          "reachable": 10240
+        },
+        {
+          "number": 5,
+          "order": "Z",
+          "count": 31045,
+          "anchor": 15136,
+          "positionsOffset": 0,
+          "valuesOffset": 496720,
+          "reachable": 15360
+        },
+        {
+          "number": 6,
+          "order": "TZ",
+          "count": 31045,
+          "anchor": 15136,
+          "positionsOffset": 0,
+          "valuesOffset": 527765,
+          "reachable": 19456
+        }
+      ],
+      "queries": [
+        {
+          "id": "default",
+          "label": "Default",
+          "anchor": 15136,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 31045,
+              "anchor": 15136,
+              "positionsOffset": 0,
+              "valuesOffset": 372540,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 31045,
+              "anchor": 15136,
+              "positionsOffset": 0,
+              "valuesOffset": 403585,
+              "reachable": 2048
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 31045,
+              "anchor": 15136,
+              "positionsOffset": 0,
+              "valuesOffset": 434630,
+              "reachable": 5120
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 31045,
+              "anchor": 15136,
+              "positionsOffset": 0,
+              "valuesOffset": 465675,
+              "reachable": 10240
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 31045,
+              "anchor": 15136,
+              "positionsOffset": 0,
+              "valuesOffset": 496720,
+              "reachable": 15360
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 31045,
+              "anchor": 15136,
+              "positionsOffset": 0,
+              "valuesOffset": 527765,
+              "reachable": 19456
+            }
+          ]
+        },
+        {
+          "id": "car",
+          "label": "Car",
+          "anchor": 26811,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 31045,
+              "anchor": 26811,
+              "positionsOffset": 0,
+              "valuesOffset": 558810,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 31045,
+              "anchor": 26811,
+              "positionsOffset": 0,
+              "valuesOffset": 589855,
+              "reachable": 3072
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 31045,
+              "anchor": 26811,
+              "positionsOffset": 0,
+              "valuesOffset": 620900,
+              "reachable": 5120
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 31045,
+              "anchor": 26811,
+              "positionsOffset": 0,
+              "valuesOffset": 651945,
+              "reachable": 9216
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 31045,
+              "anchor": 26811,
+              "positionsOffset": 0,
+              "valuesOffset": 682990,
+              "reachable": 15685
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 31045,
+              "anchor": 26811,
+              "positionsOffset": 0,
+              "valuesOffset": 714035,
+              "reachable": 20805
+            }
+          ]
+        },
+        {
+          "id": "pedestrian",
+          "label": "Pedestrian",
+          "anchor": 19006,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 31045,
+              "anchor": 19006,
+              "positionsOffset": 0,
+              "valuesOffset": 745080,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 31045,
+              "anchor": 19006,
+              "positionsOffset": 0,
+              "valuesOffset": 776125,
+              "reachable": 2048
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 31045,
+              "anchor": 19006,
+              "positionsOffset": 0,
+              "valuesOffset": 807170,
+              "reachable": 3072
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 31045,
+              "anchor": 19006,
+              "positionsOffset": 0,
+              "valuesOffset": 838215,
+              "reachable": 6144
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 31045,
+              "anchor": 19006,
+              "positionsOffset": 0,
+              "valuesOffset": 869260,
+              "reachable": 9216
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 31045,
+              "anchor": 19006,
+              "positionsOffset": 0,
+              "valuesOffset": 900305,
+              "reachable": 14336
+            }
+          ]
+        },
+        {
+          "id": "building",
+          "label": "Building",
+          "anchor": 19423,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 31045,
+              "anchor": 19423,
+              "positionsOffset": 0,
+              "valuesOffset": 931350,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 31045,
+              "anchor": 19423,
+              "positionsOffset": 0,
+              "valuesOffset": 962395,
+              "reachable": 2048
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 31045,
+              "anchor": 19423,
+              "positionsOffset": 0,
+              "valuesOffset": 993440,
+              "reachable": 3072
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 31045,
+              "anchor": 19423,
+              "positionsOffset": 0,
+              "valuesOffset": 1024485,
+              "reachable": 6144
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 31045,
+              "anchor": 19423,
+              "positionsOffset": 0,
+              "valuesOffset": 1055530,
+              "reachable": 9216
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 31045,
+              "anchor": 19423,
+              "positionsOffset": 0,
+              "valuesOffset": 1086575,
+              "reachable": 14336
+            }
+          ]
+        },
+        {
+          "id": "vegetation",
+          "label": "Vegetation",
+          "anchor": 14489,
+          "blocks": [
+            {
+              "number": 1,
+              "order": "Z",
+              "count": 31045,
+              "anchor": 14489,
+              "positionsOffset": 0,
+              "valuesOffset": 1117620,
+              "reachable": 1024
+            },
+            {
+              "number": 2,
+              "order": "TZ",
+              "count": 31045,
+              "anchor": 14489,
+              "positionsOffset": 0,
+              "valuesOffset": 1148665,
+              "reachable": 2048
+            },
+            {
+              "number": 3,
+              "order": "H",
+              "count": 31045,
+              "anchor": 14489,
+              "positionsOffset": 0,
+              "valuesOffset": 1179710,
+              "reachable": 5120
+            },
+            {
+              "number": 4,
+              "order": "TH",
+              "count": 31045,
+              "anchor": 14489,
+              "positionsOffset": 0,
+              "valuesOffset": 1210755,
+              "reachable": 10240
+            },
+            {
+              "number": 5,
+              "order": "Z",
+              "count": 31045,
+              "anchor": 14489,
+              "positionsOffset": 0,
+              "valuesOffset": 1241800,
+              "reachable": 15360
+            },
+            {
+              "number": 6,
+              "order": "TZ",
+              "count": 31045,
+              "anchor": 14489,
+              "positionsOffset": 0,
+              "valuesOffset": 1272845,
+              "reachable": 19456
+            }
+          ]
+        }
+      ],
+      "defaultQuery": "default",
+      "colors": {
+        "reachable": "#a8e05a",
+        "unreachable": "#c6c6c6",
+        "anchor": "#d62728"
+      },
+      "sha256": "a69d1f04a04bbd7c52575bc478615a8ecd0010cdd50f86c248c3ddac7890993d"
+    }
+  ]
+}

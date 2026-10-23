@@ -7,11 +7,13 @@
     <title>MixPT: Point Transformer with Interleaved Window and Global Attention</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans" rel="stylesheet">
     <link rel="stylesheet" href="static/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/index.css?v=20261023-intro-wrap-1">
     <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+    <script type="module" src="static/js/page.js?v=20261023-attention-1"></script>
   </head>
   <body>
     <main>
@@ -70,6 +72,11 @@
         </div>
       </section>
 
+      <nav class="section-links container is-max-desktop" aria-label="Page sections">
+        <a href="#abstract">Abstract</a>
+        <a href="#observations">Preliminaries</a>
+      </nav>
+
       <section class="section" id="abstract" aria-labelledby="abstract-title">
         <div class="container is-max-desktop">
           <div class="columns is-centered has-text-centered">
@@ -93,6 +100,145 @@
           </div>
         </div>
       </section>
+<section aria-labelledby="observations-title" class="section" id="observations">
+<div class="container is-max-desktop">
+<h2 class="title is-3 has-text-centered" id="observations-title">Preliminaries: Revisiting Window and Global Attention</h2>
+<div class="content">
+<h3 class="title is-4">1. Revisiting Window Attention</h3>
+<p>
+              Window attention reduces computational cost by restricting self-attention to groups of tokens called windows; in serialized designs, each window contains a fixed number of consecutive tokens from a spatially ordered sequence.
+              Because tokens in different windows cannot interact directly, serialized window transformers rely on changes in serialization pattern and hierarchical pooling for cross-window communication.
+              Alternating the serialization pattern changes window membership across blocks, while hierarchical pooling aggregates information at coarser resolutions.
+            </p>
+</div>
+<div class="columns is-mobile is-multiline observation-panels" id="fig-attention-reachability">
+<button type="button" class="reachability-button" data-reachability-open aria-label="View attention reachability in 3D" aria-haspopup="dialog" aria-controls="reachability-dialog">View in 3D <span aria-hidden="true">↗</span></button>
+<div class="column is-half-mobile is-one-fifth-tablet">
+<figure>
+<a href="static/images/reachability-01_z.png?v=20261023-padding-1" rel="noopener" target="_blank"><img alt="Tokens reachable from the selected query after LitePT attention block 1, using Z serialization." decoding="async" height="470" loading="lazy" src="static/images/reachability-01_z.png?v=20261023-padding-1" width="730"/></a>
+<figcaption class="has-text-centered">Attention Block 1 · Z</figcaption>
+</figure>
+</div>
+<div class="column is-half-mobile is-one-fifth-tablet">
+<figure>
+<a href="static/images/reachability-02_tz.png?v=20261023-padding-1" rel="noopener" target="_blank"><img alt="Tokens reachable from the selected query after LitePT attention block 2, using TZ serialization." decoding="async" height="470" loading="lazy" src="static/images/reachability-02_tz.png?v=20261023-padding-1" width="730"/></a>
+<figcaption class="has-text-centered">Attention Block 2 · TZ</figcaption>
+</figure>
+</div>
+<div class="column is-half-mobile is-one-fifth-tablet">
+<figure>
+<a href="static/images/reachability-03_h.png?v=20261023-padding-1" rel="noopener" target="_blank"><img alt="Tokens reachable from the selected query after LitePT attention block 3, using H serialization." decoding="async" height="470" loading="lazy" src="static/images/reachability-03_h.png?v=20261023-padding-1" width="730"/></a>
+<figcaption class="has-text-centered">Attention Block 3 · H</figcaption>
+</figure>
+</div>
+<div class="column is-half-mobile is-one-fifth-tablet">
+<figure>
+<a href="static/images/reachability-04_th.png?v=20261023-padding-1" rel="noopener" target="_blank"><img alt="Tokens reachable from the selected query after LitePT attention block 4, using TH serialization." decoding="async" height="470" loading="lazy" src="static/images/reachability-04_th.png?v=20261023-padding-1" width="730"/></a>
+<figcaption class="has-text-centered">Attention Block 4 · TH</figcaption>
+</figure>
+</div>
+<div class="column is-half-mobile is-one-fifth-tablet">
+<figure>
+<a href="static/images/reachability-05_z.png?v=20261023-padding-1" rel="noopener" target="_blank"><img alt="Tokens reachable from the selected query after LitePT attention block 5, using Z serialization." decoding="async" height="470" loading="lazy" src="static/images/reachability-05_z.png?v=20261023-padding-1" width="730"/></a>
+<figcaption class="has-text-centered">Attention Block 5 · Z</figcaption>
+</figure>
+</div>
+</div>
+<div class="content observation-caption has-text-centered">
+<p>
+              Information propagation through the first five blocks of encoder stage 3 of LitePT.<br>
+              Green marks tokens reachable from the red-star token; gray marks those not yet reached.
+            </p>
+</div>
+<div class="columns is-vcentered">
+<div class="column is-one-third">
+<figure class="observation-plot" id="fig-reachability-statistics">
+<a href="static/images/reachability-by-block.png" rel="noopener" target="_blank"><img alt="Structural token reachability on Waymo: LitePT-S expands gradually, Volt-S reaches all tokens from block 1, and MixPT-S reaches all tokens at its first global block, block 3." decoding="async" height="894" loading="lazy" src="static/images/reachability-by-block.png" width="1200"/></a>
+<figcaption class="has-text-centered">Structural reachability across blocks.</figcaption>
+</figure>
+</div>
+<div class="column content">
+<p>
+                Here, a token is considered reachable if it can be connected to the selected token through preceding attention blocks and hierarchical pooling transitions.
+                We measure this structural reachability from the attention stage input tokens, excluding receptive fields accumulated in the preceding convolutional stages.
+              </p>
+<p>
+                LitePT-S did not achieve 100% mean token reachability on the Waymo validation set even in its deepest attention blocks.
+                In contrast, Volt-S has full structural reachability from its first block.
+                These observations motivate introducing global attention early in the stage to establish full structural reachability.
+                MixPT-S therefore places its first global block after two window blocks, while retaining a fixed serialization for its window blocks.
+              </p>
+</div>
+</div>
+<div class="content mb-2">
+<h3 class="title is-4">2. Revisiting Global Attention</h3>
+<p>
+              Global attention achieves full structural reachability, but we ask whether its weights are also broadly distributed across tokens in every block.
+              To this end, we analyze a) how concentrated attention is within each block and b) where a selected query assigns its attention within the scene.
+            </p>
+</div>
+<div class="columns is-vcentered mb-0">
+<div class="column content pb-1">
+<p>
+                First, normalized attention entropy measures how evenly a query distributes attention over the keys it can attend to:
+                a value of one indicates uniform attention over the available keys, while lower values indicate greater concentration on a subset.
+              </p>
+<p>
+                The figure shows higher entropy in the early Volt-S blocks and lower entropy in several later blocks, indicating that the concentration of attention varies across depth.
+              </p>
+</div>
+<div class="column is-5 pb-1">
+<figure class="observation-plot" id="fig-attention-entropy">
+<a href="static/images/attention-entropy.png" rel="noopener" target="_blank"><img alt="Normalized attention entropy for LitePT-S, Volt-S and MixPT-S across blocks on Waymo; Volt-S is broadly distributed in its first block and more concentrated in several later blocks." decoding="async" height="657" loading="lazy" src="static/images/attention-entropy.png" width="1200"/></a>
+</figure>
+</div>
+</div>
+<div class="content">
+<p>
+              Second, we visualize the relative attention weights for a selected Volt query to show where attention concentrates within each block.
+              Although each block allowed global interactions, attention for this query tended to concentrate on localized regions in later blocks.
+            </p>
+</div>
+<div class="attention-figures observation-panels" id="fig-volt-attention">
+<button type="button" class="reachability-button" data-volt-open aria-label="View Volt attention in 3D" aria-haspopup="dialog" aria-controls="volt-dialog">View in 3D <span aria-hidden="true">↗</span></button>
+<figure>
+<a href="static/images/volt-attention-01.png?v=20261023-padding-1" rel="noopener" target="_blank"><img alt="Relative attention weights for the same selected query in Volt attention block 1." decoding="async" height="478" loading="lazy" src="static/images/volt-attention-01.png?v=20261023-padding-1" width="740"/></a>
+<figcaption class="has-text-centered">Attention Block 1</figcaption>
+</figure>
+<figure>
+<a href="static/images/volt-attention-02.png?v=20261023-padding-1" rel="noopener" target="_blank"><img alt="Relative attention weights for the same selected query in Volt attention block 2." decoding="async" height="478" loading="lazy" src="static/images/volt-attention-02.png?v=20261023-padding-1" width="740"/></a>
+<figcaption class="has-text-centered">Attention Block 2</figcaption>
+</figure>
+<figure>
+<a href="static/images/volt-attention-03.png?v=20261023-padding-1" rel="noopener" target="_blank"><img alt="Relative attention weights for the same selected query in Volt attention block 3." decoding="async" height="478" loading="lazy" src="static/images/volt-attention-03.png?v=20261023-padding-1" width="740"/></a>
+<figcaption class="has-text-centered">Attention Block 3</figcaption>
+</figure>
+<figure>
+<a href="static/images/volt-attention-11.png?v=20261023-padding-1" rel="noopener" target="_blank"><img alt="Relative attention weights for the same selected query in Volt attention block 11." decoding="async" height="478" loading="lazy" src="static/images/volt-attention-11.png?v=20261023-padding-1" width="740"/></a>
+<figcaption class="has-text-centered">Attention Block 11</figcaption>
+</figure>
+<figure>
+<a href="static/images/volt-attention-12.png?v=20261023-padding-1" rel="noopener" target="_blank"><img alt="Relative attention weights for the same selected query in Volt attention block 12." decoding="async" height="478" loading="lazy" src="static/images/volt-attention-12.png?v=20261023-padding-1" width="740"/></a>
+<figcaption class="has-text-centered">Attention Block 12</figcaption>
+</figure>
+<figure class="attention-scale has-text-centered">
+<a href="static/images/volt-attention-colorbar.png" rel="noopener" target="_blank"><img alt="Color scale for relative attention weight." decoding="async" height="160" loading="lazy" src="static/images/volt-attention-colorbar.png" width="58"/></a>
+<figcaption class="is-size-7">Rel. attn.</figcaption>
+</figure>
+</div>
+<div class="content observation-caption has-text-centered">
+<p>
+              Attention patterns across Volt blocks on the Waymo validation set.<br>
+              Values of 1 and 10 indicate weights equal to and ten times the uniform weight, respectively.
+            </p>
+</div>
+<div class="content">
+<p>
+              These two key observations motivate the periodic use of global attention in MixPT-S for direct cross-window information exchange without computing attention between all token pairs in every block.
+            </p>
+</div>
+</div>
+</section>
     </main>
     <footer class="footer">
       <div class="container">
@@ -107,5 +253,90 @@
         </div>
       </div>
     </footer>
+<dialog id="reachability-dialog" class="pointcloud-dialog" aria-labelledby="reachability-title">
+  <div class="pointcloud-header">
+    <h2 id="reachability-title" class="title is-4">LitePT · Attention reachability</h2>
+    <button type="button" class="button is-small" data-reachability-close autofocus>Close</button>
+  </div>
+  <fieldset class="pointcloud-controls" aria-label="Reachability controls" disabled>
+    <label class="reachability-block reachability-scene" for="reachability-scene">Scene
+      <span class="select is-small"><select id="reachability-scene">
+        <option value="">Loading scenes…</option>
+      </select></span>
+    </label>
+    <label class="reachability-block" for="reachability-query" data-query-control hidden>Query
+      <span class="select is-small"><select id="reachability-query">
+        <option value="">Loading queries…</option>
+      </select></span>
+    </label>
+    <div class="reachability-block">
+      <label for="reachability-block">Attention block</label>
+      <div class="reachability-block-picker">
+        <button type="button" class="button is-small" data-reachability-previous aria-label="Previous attention block">&lt;</button>
+        <span class="select is-small"><select id="reachability-block">
+          <option value="">Loading blocks…</option>
+        </select></span>
+        <button type="button" class="button is-small" data-reachability-next aria-label="Next attention block">&gt;</button>
+      </div>
+    </div>
+    <button type="button" class="button is-small" data-reachability-top>Top view</button>
+    <label class="pointcloud-size" for="reachability-size">Point size
+      <input id="reachability-size" type="range" min="1" max="6" step="0.5" value="2.5" aria-valuetext="2.5 pixels">
+      <output for="reachability-size">2.5 px</output>
+    </label>
+  </fieldset>
+  <p id="reachability-status" class="pointcloud-status" role="status" aria-live="polite">Loading point cloud…</p>
+  <div class="reachability-viewport" hidden aria-busy="true"></div>
+  <div class="color-legend reachability-legend" aria-label="Token colors">
+    <span><span class="legend-swatch reachability-reached" aria-hidden="true"></span>Reachable</span>
+    <span><span class="legend-swatch reachability-unreached" aria-hidden="true"></span>Not yet reached</span>
+    <span><span class="reachability-anchor" aria-hidden="true">★</span>Selected token</span>
+  </div>
+</dialog>
+<dialog id="volt-dialog" class="pointcloud-dialog" aria-labelledby="volt-title">
+  <div class="pointcloud-header">
+    <h2 id="volt-title" class="title is-4">Volt · Attention weights</h2>
+    <button type="button" class="button is-small" data-volt-close autofocus>Close</button>
+  </div>
+  <fieldset class="pointcloud-controls" aria-label="Attention controls" disabled>
+    <label class="reachability-block reachability-scene" for="volt-scene">Scene
+      <span class="select is-small"><select id="volt-scene">
+        <option value="">Loading scenes…</option>
+      </select></span>
+    </label>
+    <label class="reachability-block" for="volt-query" data-query-control hidden>Query
+      <span class="select is-small"><select id="volt-query">
+        <option value="">Loading queries…</option>
+      </select></span>
+    </label>
+    <div class="reachability-block">
+      <label for="volt-block">Attention block</label>
+      <div class="reachability-block-picker">
+        <button type="button" class="button is-small" data-volt-previous aria-label="Previous attention block">&lt;</button>
+        <span class="select is-small"><select id="volt-block">
+          <option value="">Loading blocks…</option>
+        </select></span>
+        <button type="button" class="button is-small" data-volt-next aria-label="Next attention block">&gt;</button>
+      </div>
+    </div>
+    <button type="button" class="button is-small" data-volt-top>Top view</button>
+    <label class="pointcloud-size" for="volt-size">Point size
+      <input id="volt-size" type="range" min="1" max="6" step="0.5" value="2.5" aria-valuetext="2.5 pixels">
+      <output for="volt-size">2.5 px</output>
+    </label>
+  </fieldset>
+  <p id="volt-status" class="pointcloud-status" role="status" aria-live="polite">Loading point cloud…</p>
+  <div class="reachability-viewport" hidden aria-busy="true"></div>
+  <div class="color-legend reachability-legend" aria-label="Relative attention weight: attention weight divided by uniform weight">
+    <div class="attention-colorbar">
+      <span>Rel. attn.</span>
+      <div class="attention-colorbar-key">
+        <div class="attention-colorbar-gradient" aria-hidden="true"></div>
+        <div class="attention-colorbar-ticks"></div>
+      </div>
+    </div>
+    <span><span class="reachability-anchor" aria-hidden="true">★</span>Selected query</span>
+  </div>
+</dialog>
   </body>
 </html>
