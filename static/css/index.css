@@ -11,7 +11,7 @@ main {
 
 .teaser .hero-body {
   padding-top: 0;
-  padding-bottom: 3rem;
+  padding-bottom: 0.5rem;
 }
 
 .teaser {
@@ -52,12 +52,9 @@ main {
 
 .attention-figures {
   display: grid;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.attention-figures {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .attention-scale img {
@@ -66,6 +63,11 @@ main {
 
 .attention-scale figcaption {
   white-space: nowrap;
+}
+
+#observations,
+#method {
+  padding-top: 0.5rem;
 }
 
 #observations figcaption,
@@ -130,10 +132,6 @@ main {
   max-width: 24rem;
 }
 
-#observations .attention-figures {
-  gap: 1rem;
-}
-
 @media screen and (min-width: 769px) {
   #observations .observation-panels {
     max-width: 54rem;
@@ -141,7 +139,7 @@ main {
     margin-right: auto;
   }
 
-.attention-figures {
+  .attention-figures {
     grid-template-columns: repeat(5, minmax(0, 1fr)) minmax(0, 0.2301fr);
   }
 
@@ -155,8 +153,6 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.25rem 1rem;
-  margin: 1.5rem 0;
-  font-size: 0.75rem;
 }
 
 .color-legend > span {
@@ -383,4 +379,28 @@ main {
 
 .section[id] {
   scroll-margin-top: 1.5rem;
+}
+
+.teaser-description code,
+#method code {
+  color: inherit;
+}
+
+#method figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+#fig-method-overview {
+  margin-bottom: 2rem;
+}
+
+#fig-attention-blocks {
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+#fig-attention-blocks .columns {
+  margin-bottom: 0;
 }

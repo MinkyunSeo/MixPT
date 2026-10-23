@@ -64,7 +64,7 @@
               <figcaption>
                 <h2 id="teaser-title" class="subtitle has-text-centered">
                   <strong>Serialize once, mix window and global attention.</strong><br>
-                  <span class="teaser-description">MixPT-S serializes tokens once (S) and reuses that order throughout its WWGWWGWW attention schedule.</span>
+                  <span class="teaser-description">MixPT-S serializes tokens once (<code>S</code>) and reuses that order throughout its <code>WWGWWGWW</code> attention schedule.</span>
                 </h2>
               </figcaption>
             </figure>
@@ -75,6 +75,7 @@
       <nav class="section-links container is-max-desktop" aria-label="Page sections">
         <a href="#abstract">Abstract</a>
         <a href="#observations">Preliminaries</a>
+        <a href="#method">Method</a>
       </nav>
 
       <section class="section" id="abstract" aria-labelledby="abstract-title">
@@ -146,7 +147,7 @@
 </div>
 <div class="content observation-caption has-text-centered">
 <p>
-              Information propagation through the first five blocks of encoder stage 3 of LitePT.<br>
+              Information propagation through the first five blocks of encoder stage 3 of LitePT on the Waymo validation set.<br>
               Green marks tokens reachable from the red-star token; gray marks those not yet reached.
             </p>
 </div>
@@ -239,6 +240,69 @@
 </div>
 </div>
 </section>
+      <section class="section" id="method" aria-labelledby="method-title">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3 has-text-centered" id="method-title">Method</h2>
+          <div class="content">
+            <h3 class="title is-4">Architecture Overview</h3>
+            <p>
+              We retain the high-resolution sparse convolutional stages and remaining decoder structure of LitePT.
+              We consolidate LitePT's multiple attention stages into a single stage by removing the intermediate pooling transition and the corresponding decoder upsampling.
+              Within this stage, all window blocks reuse a single fixed serialization pattern, while global attention blocks are periodically interleaved following the <code>WWGWWGWW</code> schedule.
+            </p>
+          </div>
+          <figure id="fig-method-overview">
+            <a href="static/images/method-overview.png" target="_blank" rel="noopener" aria-label="View the architecture figure at full resolution">
+              <img src="static/images/method-overview.png" width="1800" height="368" loading="lazy" decoding="async" alt="MixPT retains sparse convolution and decoder stages and uses a single attention stage with the WWGWWGWW schedule. LitePT's multiple attention stages are shown on the right.">
+            </a>
+            <figcaption class="has-text-centered">Block-level overview of MixPT: (a) sparse convolution stages, (b) attention stage, and (c) decoder stages.</figcaption>
+          </figure>
+          <div class="columns is-vcentered">
+            <div class="column content">
+              <h3 class="title is-4">Fixed-Order Window Attention</h3>
+              <p>
+                Unlike PTv3 and LitePT, which vary serialization patterns across blocks, we use a single fixed pattern throughout the attention stage.
+                This allows the serialization and window-index mappings to be reused across window attention blocks.
+                Our default is Trans Z-order (<code>TZ</code>).
+              </p>
+              <p>
+                We follow LitePT in applying self-attention within serialized windows containing a fixed number of tokens, followed by an MLP.
+                We omit its additional block-entry LayerNorm on the residual stream and use a standard pre-norm design with LayerNorm only before the attention and MLP sublayers.
+              </p>
+              <h3 class="title is-4">Interleaved Global Attention with Pooling</h3>
+              <p>
+                A global block enables scene-wide communication across fixed windows.
+                When the number of stage tokens is manageable, we apply global attention directly at the original stage resolution.
+                For large token sets, we apply global attention to spatially pooled tokens and return only the resulting residual updates to the original-resolution stream.
+              </p>
+            </div>
+            <div class="column is-5">
+              <figure id="fig-attention-blocks">
+                <div class="columns is-mobile is-variable is-2">
+                  <div class="column">
+                    <a href="static/images/window-attention-block.png" target="_blank" rel="noopener">
+                      <img src="static/images/window-attention-block.png" width="481" height="1000" loading="lazy" decoding="async" alt="Window attention block with LayerNorm before self-attention and the MLP, and a residual connection around each sublayer.">
+                    </a>
+                  </div>
+                  <div class="column">
+                    <a href="static/images/global-attention-block.png" target="_blank" rel="noopener">
+                      <img src="static/images/global-attention-block.png" width="481" height="1000" loading="lazy" decoding="async" alt="Pooled global attention block. Attention and MLP residual updates are unpooled and added to the original-resolution stream.">
+                    </a>
+                  </div>
+                </div>
+                <figcaption class="has-text-centered">Window attention (left) and pooled global attention (right) blocks in MixPT.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="content">
+            <h3 class="title is-4">Rotary Positional Encoding for 3D Points</h3>
+            <p>
+              We follow the axial PointROPE formulation used in LitePT, while using an asymmetric allocation of RoPE dimensions across the three spatial axes in our default configurations.
+              Specifically, one-dimensional RoPE is applied independently to the <i>x</i>-, <i>y</i>-, and <i>z</i>-axis subspaces of each attention head's query and key vectors.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="container">
