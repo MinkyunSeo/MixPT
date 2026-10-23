@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans" rel="stylesheet">
     <link rel="stylesheet" href="static/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="static/css/index.css?v=20261023-intro-wrap-1">
+    <link rel="stylesheet" href="static/css/index.css?v=20261024-ablations-1">
     <script defer src="static/js/fontawesome.all.min.js"></script>
     <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
-    <script type="module" src="static/js/page.js?v=20261023-attention-1"></script>
+    <script type="module" src="static/js/page.js?v=20261024-results-1"></script>
   </head>
   <body>
     <main>
-      <header class="hero publication-header" aria-labelledby="paper-title">
+      <header class="hero" aria-labelledby="paper-title">
         <div class="hero-body">
           <div class="container is-max-desktop">
             <div class="columns is-centered">
@@ -36,8 +36,8 @@
                 </div>
 
                 <div class="column has-text-centered">
-                  <div class="publication-links buttons is-centered">
-                    <a href="https://arxiv.org/abs/2610.31455" class="external-link button is-normal is-rounded is-dark">
+                  <div class="buttons is-centered">
+                    <a href="https://arxiv.org/abs/2610.31455" class="button is-normal is-rounded is-dark">
                       <span class="icon" aria-hidden="true"><i class="ai ai-arxiv"></i></span>
                       <span>arXiv</span>
                     </a>
@@ -76,6 +76,8 @@
         <a href="#abstract">Abstract</a>
         <a href="#observations">Preliminaries</a>
         <a href="#method">Method</a>
+        <a href="#results">Experiments</a>
+        <a href="#ablation-studies">Ablations</a>
       </nav>
 
       <section class="section" id="abstract" aria-labelledby="abstract-title">
@@ -303,6 +305,514 @@
           </div>
         </div>
       </section>
+      <section aria-labelledby="results-title" class="section" id="results">
+<div class="container is-max-desktop">
+<h2 class="title is-3 has-text-centered" id="results-title">Experiments</h2>
+<div class="content">
+
+<h3 class="title is-4">Main Results</h3>
+</div>
+<div data-tab-group="" id="main-results">
+<div class="tabs result-tabs"><ul aria-label="Main results" role="tablist"><li class="is-active" role="presentation"><a aria-controls="results-latency" aria-selected="true" href="#results-latency" id="tab-results-latency" role="tab" tabindex="0">Latency</a></li><li role="presentation"><a aria-controls="results-semantic" aria-selected="false" href="#results-semantic" id="tab-results-semantic" role="tab" tabindex="-1">Semantic segmentation</a></li><li role="presentation"><a aria-controls="results-instance" aria-selected="false" href="#results-instance" id="tab-results-instance" role="tab" tabindex="-1">Instance segmentation</a></li></ul></div>
+
+
+
+<div aria-labelledby="tab-results-latency" id="results-latency" role="tabpanel" tabindex="0"><p class="result-caption has-text-centered" id="table-latency-comparison-caption">Median latency for a single model forward pass over voxelized validation scenes (ms), measured with batch size one and FP16 autocast on an RTX A6000. For MixPT, -S, -B, and -L denote the small, base, and large variants, respectively.</p><div class="table-container"><table aria-describedby="table-latency-comparison-caption" aria-labelledby="tab-results-latency" class="table is-striped is-hoverable is-fullwidth" id="table-latency-comparison">
+<thead>
+<tr><th scope="col">Method</th><th scope="col">Attention</th><th class="has-text-right" scope="col">#Params</th><th class="has-text-right" scope="col">Sem.KITTI</th><th class="has-text-right" scope="col">Waymo</th><th class="has-text-right" scope="col">nuScenes</th><th class="has-text-right" scope="col">ScanNet</th></tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">PTv3 </th>
+<td>Window</td>
+<td class="has-text-right">46.1M</td>
+<td class="has-text-right">63.6</td>
+<td class="has-text-right">87.8</td>
+<td class="has-text-right">38.3</td>
+<td class="has-text-right">48.1</td>
+</tr>
+<tr>
+<th scope="row">LitePT-S </th>
+<td>Window</td>
+<td class="has-text-right">12.7M</td>
+<td class="has-text-right">36.4</td>
+<td class="has-text-right">53.0</td>
+<td class="has-text-right">27.8</td>
+<td class="has-text-right">25.7</td>
+</tr>
+<tr>
+<th scope="row">Volt-S </th>
+<td>Global</td>
+<td class="has-text-right">23.7M</td>
+<td class="has-text-right">140.3</td>
+<td class="has-text-right">295.5</td>
+<td class="has-text-right">40.0</td>
+<td class="has-text-right">23.0</td>
+</tr>
+<tr>
+<th scope="row"><strong>MixPT-S (Ours)</strong></th>
+<td>Window + Global</td>
+<td class="has-text-right">14.1M</td>
+<td class="has-text-right"><strong>28.2</strong></td>
+<td class="has-text-right"><strong>42.8</strong></td>
+<td class="has-text-right"><strong>19.2</strong></td>
+<td class="has-text-right"><strong>17.5</strong></td>
+</tr>
+<tr>
+<th scope="row"><strong>MixPT-B (Ours)</strong></th>
+<td>Window + Global</td>
+<td class="has-text-right">51.8M</td>
+<td class="has-text-right">56.4</td>
+<td class="has-text-right">90.3</td>
+<td class="has-text-right">33.8</td>
+<td class="has-text-right">30.2</td>
+</tr>
+<tr>
+<th scope="row"><strong>MixPT-L (Ours)</strong></th>
+<td>Window + Global</td>
+<td class="has-text-right">89.4M</td>
+<td class="has-text-right">72.4</td>
+<td class="has-text-right">120.1</td>
+<td class="has-text-right">45.7</td>
+<td class="has-text-right">33.4</td>
+</tr>
+</tbody>
+</table></div></div><div aria-labelledby="tab-results-semantic" hidden="" id="results-semantic" role="tabpanel" tabindex="0"><p class="result-caption has-text-centered" id="table-semantic-segmentation-results-caption">Semantic segmentation w/o TTA (mIoU / mAcc, %).<br>Bold and underline indicate the best and second-best results, respectively, among the baselines and MixPT-S.</p><div class="table-container"><table aria-describedby="table-semantic-segmentation-results-caption" aria-labelledby="tab-results-semantic" class="table is-striped is-hoverable is-fullwidth" id="table-semantic-segmentation-results">
+<thead>
+<tr><th rowspan="2" scope="col">Method</th><th class="has-text-right" rowspan="2" scope="col">#Params</th><th class="has-text-centered" colspan="2" scope="colgroup">Sem.KITTI</th><th class="has-text-centered" colspan="2" scope="colgroup">Waymo</th><th class="has-text-centered" colspan="2" scope="colgroup">nuScenes</th><th class="has-text-centered" colspan="2" scope="colgroup">ScanNet</th></tr>
+<tr><th class="has-text-right" scope="col">mIoU</th><th class="has-text-right" scope="col">mAcc</th><th class="has-text-right" scope="col">mIoU</th><th class="has-text-right" scope="col">mAcc</th><th class="has-text-right" scope="col">mIoU</th><th class="has-text-right" scope="col">mAcc</th><th class="has-text-right" scope="col">mIoU</th><th class="has-text-right" scope="col">mAcc</th></tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">PTv3 </th>
+<td class="has-text-right">46.1M</td>
+<td class="has-text-right">69.6</td>
+<td class="has-text-right"><u>77.2</u></td>
+<td class="has-text-right">70.7</td>
+<td class="has-text-right">81.3</td>
+<td class="has-text-right">79.6</td>
+<td class="has-text-right">86.6</td>
+<td class="has-text-right"><strong>76.5</strong></td>
+<td class="has-text-right"><strong>85.3</strong></td>
+</tr>
+<tr>
+<th scope="row">LitePT-S </th>
+<td class="has-text-right">12.7M</td>
+<td class="has-text-right"><u>69.8</u></td>
+<td class="has-text-right">76.8</td>
+<td class="has-text-right"><u>71.7</u></td>
+<td class="has-text-right"><u>82.8</u></td>
+<td class="has-text-right">80.3</td>
+<td class="has-text-right">87.1</td>
+<td class="has-text-right">75.5</td>
+<td class="has-text-right">83.4</td>
+</tr>
+<tr>
+<th scope="row">Volt-S </th>
+<td class="has-text-right">23.7M</td>
+<td class="has-text-right">69.4</td>
+<td class="has-text-right">77.0</td>
+<td class="has-text-right">70.5</td>
+<td class="has-text-right">80.3</td>
+<td class="has-text-right"><u>80.5</u></td>
+<td class="has-text-right"><strong>87.5</strong></td>
+<td class="has-text-right"><u>76.4</u></td>
+<td class="has-text-right"><u>84.9</u></td>
+</tr>
+<tr>
+<th scope="row"><strong>MixPT-S (Ours)</strong></th>
+<td class="has-text-right">14.1M</td>
+<td class="has-text-right"><strong>70.0</strong></td>
+<td class="has-text-right"><strong>77.3</strong></td>
+<td class="has-text-right"><strong>72.1</strong></td>
+<td class="has-text-right"><strong>83.0</strong></td>
+<td class="has-text-right"><strong>80.6</strong></td>
+<td class="has-text-right"><u>87.4</u></td>
+<td class="has-text-right">76.0</td>
+<td class="has-text-right">84.3</td>
+</tr>
+<tr>
+<th scope="row"><strong>MixPT-B (Ours)</strong></th>
+<td class="has-text-right">51.8M</td>
+<td class="has-text-right">70.4</td>
+<td class="has-text-right">77.2</td>
+<td class="has-text-right">72.1</td>
+<td class="has-text-right">84.1</td>
+<td class="has-text-right">81.1</td>
+<td class="has-text-right">87.3</td>
+<td class="has-text-right">76.4</td>
+<td class="has-text-right">84.9</td>
+</tr>
+<tr>
+<th scope="row"><strong>MixPT-L (Ours)</strong></th>
+<td class="has-text-right">89.4M</td>
+<td class="has-text-right">70.6</td>
+<td class="has-text-right">77.4</td>
+<td class="has-text-right">72.4</td>
+<td class="has-text-right">83.7</td>
+<td class="has-text-right">81.5</td>
+<td class="has-text-right">87.9</td>
+<td class="has-text-right">76.7</td>
+<td class="has-text-right">85.1</td>
+</tr>
+</tbody>
+</table></div>
+
+</div><div aria-labelledby="tab-results-instance" hidden="" id="results-instance" role="tabpanel" tabindex="0"><p class="result-caption has-text-centered" id="table-instance-segmentation-results-caption">Indoor instance segmentation on ScanNet and ScanNet200 (%). We evaluate different backbones using PointGroup.</p><div class="table-container"><table aria-describedby="table-instance-segmentation-results-caption" aria-labelledby="tab-results-instance" class="table is-striped is-hoverable is-fullwidth" id="table-instance-segmentation-results">
+<thead>
+<tr><th rowspan="2" scope="col">Backbone</th><th class="has-text-right" rowspan="2" scope="col">#Params</th><th class="has-text-centered" colspan="3" scope="colgroup">ScanNet</th><th class="has-text-centered" colspan="3" scope="colgroup">ScanNet200</th></tr>
+<tr><th class="has-text-right" scope="col">mAP<sub>25</sub></th><th class="has-text-right" scope="col">mAP<sub>50</sub></th><th class="has-text-right" scope="col">mAP</th><th class="has-text-right" scope="col">mAP<sub>25</sub></th><th class="has-text-right" scope="col">mAP<sub>50</sub></th><th class="has-text-right" scope="col">mAP</th></tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">PTv3 </th>
+<td class="has-text-right">46.2M</td>
+<td class="has-text-right">77.5</td>
+<td class="has-text-right">61.7</td>
+<td class="has-text-right">40.9</td>
+<td class="has-text-right"><u>40.1</u></td>
+<td class="has-text-right"><strong>33.2</strong></td>
+<td class="has-text-right"><strong>23.1</strong></td>
+</tr>
+<tr>
+<th scope="row">LitePT-S* </th>
+<td class="has-text-right">16.0M</td>
+<td class="has-text-right"><u>78.5</u></td>
+<td class="has-text-right"><u>64.9</u></td>
+<td class="has-text-right"><strong>41.7</strong></td>
+<td class="has-text-right"><strong>40.3</strong></td>
+<td class="has-text-right"><u>33.1</u></td>
+<td class="has-text-right">22.2</td>
+</tr>
+<tr>
+<th scope="row">Volt-S </th>
+<td class="has-text-right">23.7M</td>
+<td class="has-text-right">77.4</td>
+<td class="has-text-right">62.7</td>
+<td class="has-text-right">40.2</td>
+<td class="has-text-right">38.2</td>
+<td class="has-text-right">32.1</td>
+<td class="has-text-right">21.1</td>
+</tr>
+<tr>
+<th scope="row"><strong>MixPT-S* (Ours)</strong></th>
+<td class="has-text-right">18.4M</td>
+<td class="has-text-right"><strong>78.9</strong></td>
+<td class="has-text-right"><strong>65.1</strong></td>
+<td class="has-text-right"><u>41.1</u></td>
+<td class="has-text-right">38.5</td>
+<td class="has-text-right">32.5</td>
+<td class="has-text-right"><u>22.4</u></td>
+</tr>
+</tbody>
+</table></div>
+<div class="content">
+<p>
+Following the instance segmentation setup of LitePT, we used MixPT-S*, which extends MixPT-S with additional attention and convolution blocks.
+</p>
+</div>
+</div></div>
+<div class="content">
+<p>
+MixPT-S achieved the lowest latency across all four datasets, reducing latency by 19% to 32% relative to LitePT-S.
+The gap was larger relative to Volt-S, the global attention baseline, on outdoor datasets where MixPT-S was 2.1 to 6.9× faster.
+Despite these latency reductions, MixPT-S matched or improved upon LitePT-S in mIoU across all four datasets when evaluated without TTA.
+MixPT-B and MixPT-L generally improved performance across the evaluated benchmarks.
+</p>
+</div>
+<div class="content">
+<h3 class="title is-4">Latency Breakdown</h3>
+<p>
+              A key source of efficiency is that MixPT constructs the serialization order and stage layout once and reuses them across window attention blocks.
+              Token reorganization therefore occurs only at stage entry and exit, whereas LitePT repeatedly gathers and scatters tokens across blocks.
+              On nuScenes, these serialization-related operations took 1.01 ms in MixPT-S, compared with 10.61 ms in LitePT-S.
+            </p>
+</div>
+<figure id="fig-latency-breakdown">
+<div class="columns mb-2">
+<div class="column">
+<figure>
+<a href="static/images/latency-stages.png" rel="noopener" target="_blank">
+<img alt="MixPT-S stage latency on nuScenes: convolution stages 6.63 ms, attention stage 11.60 ms, and decoder stages 0.93 ms." decoding="async" height="343" loading="lazy" src="static/images/latency-stages.png" width="1400"/>
+</a>
+<figcaption class="has-text-centered">(a) Overall stage breakdown [ms]</figcaption>
+</figure>
+</div>
+<div class="column">
+<figure>
+<a href="static/images/latency-attention.png" rel="noopener" target="_blank">
+<img alt="MixPT-S attention-stage latency on nuScenes: pooling 1.32 ms, serialization 1.01 ms, window attention 5.45 ms, and global attention 3.82 ms." decoding="async" height="343" loading="lazy" src="static/images/latency-attention.png" width="1400"/>
+</a>
+<figcaption class="has-text-centered">(b) Attention stage breakdown [ms]</figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="has-text-centered">MixPT-S latency breakdown on nuScenes: (a) across model stages and (b) across individual components within the attention stage.</figcaption>
+</figure>
+<section id="ablation-studies" class="mt-6" aria-labelledby="ablation-title">
+<div class="content"><h3 class="title is-4" id="ablation-title">Ablation Studies</h3></div>
+<div id="ablation-results" data-tab-group>
+<div class="tabs result-tabs"><ul role="tablist" aria-label="Ablation studies">
+<li role="presentation" class="is-active"><a id="tab-ablation-serialization" role="tab" href="#ablation-serialization" aria-controls="ablation-serialization" aria-selected="true" tabindex="0">Fixed serialization</a></li>
+<li role="presentation"><a id="tab-ablation-arrangement" role="tab" href="#ablation-arrangement" aria-controls="ablation-arrangement" aria-selected="false" tabindex="-1">Block arrangement</a></li>
+<li role="presentation"><a id="tab-ablation-pooling" role="tab" href="#ablation-pooling" aria-controls="ablation-pooling" aria-selected="false" tabindex="-1">Pooling stride</a></li>
+<li role="presentation"><a id="tab-ablation-rope" role="tab" href="#ablation-rope" aria-controls="ablation-rope" aria-selected="false" tabindex="-1">RoPE allocation</a></li>
+</ul></div>
+<div id="ablation-serialization" role="tabpanel" aria-labelledby="tab-ablation-serialization" tabindex="0">
+<div class="content"><h4 class="title is-5">Fixed Serialization and Global Attention</h4></div>
+<p class="result-caption has-text-centered" id="table-fixed-serialization-global-ablation-caption">Fixed serialization and global attention ablation (w/o TTA, mIoU / mAcc, %).<br/>Attention-stage depth and width were held fixed across variants.<br/><code>Z</code>: Z-order; <code>TZ</code>: Trans Z-order; <code>H</code>: Hilbert; <code>TH</code>: Trans Hilbert; <code>W</code>/<code>G</code>: window/global attention.</p>
+<div class="table-container"><table aria-describedby="table-fixed-serialization-global-ablation-caption" aria-labelledby="tab-ablation-serialization" class="table is-striped is-hoverable is-fullwidth is-narrow" id="table-fixed-serialization-global-ablation">
+
+<thead>
+<tr><th rowspan="2" scope="col">Serialization</th><th rowspan="2" scope="col">Block layout</th><th class="has-text-centered" colspan="4" scope="colgroup">Sem.KITTI (<i>s</i> = 4)</th><th class="has-text-centered" colspan="4" scope="colgroup">ScanNet (<i>s</i> = 1)</th></tr>
+<tr><th class="has-text-right" scope="col">#Params</th><th class="has-text-right" scope="col">Latency (ms)</th><th class="has-text-right" scope="col">mIoU</th><th class="has-text-right" scope="col">mAcc</th><th class="has-text-right" scope="col">#Params</th><th class="has-text-right" scope="col">Latency (ms)</th><th class="has-text-right" scope="col">mIoU</th><th class="has-text-right" scope="col">mAcc</th></tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row"><code>Z</code> + <code>TZ</code> + <code>H</code> + <code>TH</code></th>
+<td><code>WWWWWWWW</code></td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right">32.99</td>
+<td class="has-text-right">68.5</td>
+<td class="has-text-right">75.6</td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right">21.28</td>
+<td class="has-text-right">74.8</td>
+<td class="has-text-right">84.0</td>
+</tr>
+<tr>
+<th scope="row"><code>TZ</code></th>
+<td><code>WWWWWWWW</code></td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right">27.88</td>
+<td class="has-text-right">68.6</td>
+<td class="has-text-right">76.3</td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right"><strong>17.16</strong></td>
+<td class="has-text-right">73.7</td>
+<td class="has-text-right">83.5</td>
+</tr>
+<tr class="has-background-light">
+<th scope="row"><code>TZ</code></th>
+<td><code>WWGWWGWW</code></td>
+<td class="has-text-right">14.1M</td>
+<td class="has-text-right">28.20</td>
+<td class="has-text-right"><strong>70.0</strong></td>
+<td class="has-text-right"><strong>77.3</strong></td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right">17.48</td>
+<td class="has-text-right"><strong>76.0</strong></td>
+<td class="has-text-right"><strong>84.3</strong></td>
+</tr>
+<tr>
+<th scope="row">-</th>
+<td><code>GGGGGGGG</code></td>
+<td class="has-text-right">15.6M</td>
+<td class="has-text-right"><strong>27.36</strong></td>
+<td class="has-text-right">68.0</td>
+<td class="has-text-right">75.8</td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right">17.60</td>
+<td class="has-text-right">75.7</td>
+<td class="has-text-right">84.0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="content mt-4"><p>
+Fixing the serialization pattern reduced latency on both datasets, while leaving mIoU nearly unchanged on SemanticKITTI and decreasing it on ScanNet.
+Changing two of the eight window blocks to global blocks raised mIoU to 70.0% and 76.0%, respectively, with only a small increase in full-model latency.
+Overall, periodic global attention improved the accuracy of fixed serialization while preserving its latency advantage over multi-pattern window attention.
+</p></div>
+</div>
+<div id="ablation-arrangement" role="tabpanel" aria-labelledby="tab-ablation-arrangement" tabindex="0" hidden>
+<div class="content"><h4 class="title is-5">How Should Window and Global Blocks Be Arranged?</h4></div>
+<p class="result-caption has-text-centered" id="table-block-arrangement-ablation-caption">Block arrangement ablation for semantic segmentation (w/o TTA, mIoU / mAcc, %).</p>
+<div class="table-container"><table aria-describedby="table-block-arrangement-ablation-caption" aria-labelledby="tab-ablation-arrangement" class="table is-striped is-hoverable is-fullwidth is-narrow" id="table-block-arrangement-ablation">
+
+<thead>
+<tr><th rowspan="2" scope="col">Block layout</th><th class="has-text-right" rowspan="2" scope="col">#W</th><th class="has-text-right" rowspan="2" scope="col">#G</th><th class="has-text-centered" colspan="4" scope="colgroup">nuScenes</th><th class="has-text-centered" colspan="4" scope="colgroup">ScanNet</th></tr>
+<tr><th class="has-text-right" scope="col">#Params</th><th class="has-text-right" scope="col">Latency (ms)</th><th class="has-text-right" scope="col">mIoU</th><th class="has-text-right" scope="col">mAcc</th><th class="has-text-right" scope="col">#Params</th><th class="has-text-right" scope="col">Latency (ms)</th><th class="has-text-right" scope="col">mIoU</th><th class="has-text-right" scope="col">mAcc</th></tr>
+</thead>
+<tbody>
+<tr class="has-background-light">
+<th scope="row"><code>WWGWWGWW</code></th>
+<td class="has-text-right">6</td>
+<td class="has-text-right">2</td>
+<td class="has-text-right">14.1M</td>
+<td class="has-text-right"><strong>19.16</strong></td>
+<td class="has-text-right">80.6</td>
+<td class="has-text-right">87.4</td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right">17.48</td>
+<td class="has-text-right"><strong>76.0</strong></td>
+<td class="has-text-right"><strong>84.3</strong></td>
+</tr>
+<tr>
+<th scope="row"><code>WWWGWWWG</code></th>
+<td class="has-text-right">6</td>
+<td class="has-text-right">2</td>
+<td class="has-text-right">14.1M</td>
+<td class="has-text-right">19.39</td>
+<td class="has-text-right">80.4</td>
+<td class="has-text-right">87.1</td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right">17.61</td>
+<td class="has-text-right">75.1</td>
+<td class="has-text-right">83.9</td>
+</tr>
+<tr>
+<th scope="row"><code>WWWWGGGG</code></th>
+<td class="has-text-right">4</td>
+<td class="has-text-right">4</td>
+<td class="has-text-right">14.6M</td>
+<td class="has-text-right">21.05</td>
+<td class="has-text-right">80.0</td>
+<td class="has-text-right">87.2</td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right">17.44</td>
+<td class="has-text-right">75.6</td>
+<td class="has-text-right">83.9</td>
+</tr>
+<tr>
+<th scope="row"><code>WGWGWGWG</code></th>
+<td class="has-text-right">4</td>
+<td class="has-text-right">4</td>
+<td class="has-text-right">14.6M</td>
+<td class="has-text-right">21.46</td>
+<td class="has-text-right">79.7</td>
+<td class="has-text-right">86.9</td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right"><strong>17.42</strong></td>
+<td class="has-text-right">75.6</td>
+<td class="has-text-right"><strong>84.3</strong></td>
+</tr>
+<tr>
+<th scope="row"><code>WWWGWWWGWW</code></th>
+<td class="has-text-right">8</td>
+<td class="has-text-right">2</td>
+<td class="has-text-right">17.1M</td>
+<td class="has-text-right">21.00</td>
+<td class="has-text-right"><strong>80.8</strong></td>
+<td class="has-text-right"><strong>87.6</strong></td>
+<td class="has-text-right">16.6M</td>
+<td class="has-text-right">18.54</td>
+<td class="has-text-right">75.6</td>
+<td class="has-text-right">83.6</td>
+</tr>
+</tbody>
+</table></div>
+<div class="content mt-4"><p>
+Among the eight-block schedules, <code>WWGWWGWW</code> provided a favorable accuracy-latency trade-off on nuScenes and achieved the highest mIoU on ScanNet.
+Increasing the number of global blocks did not consistently improve accuracy and incurred additional latency on nuScenes, supporting the use of global attention only periodically.
+</p></div>
+</div>
+<div id="ablation-pooling" role="tabpanel" aria-labelledby="tab-ablation-pooling" tabindex="0" hidden>
+<div class="content"><h4 class="title is-5">How Much Pooling Should Precede Global Attention?</h4></div>
+<figure id="fig-global-pooling-stride">
+<div class="pooling-figures">
+<figure><a href="static/images/pooling-accuracy-latency.png" target="_blank" rel="noopener"><img src="static/images/pooling-accuracy-latency.png" width="1200" height="901" loading="lazy" decoding="async" alt="Waymo mIoU and full-model latency as global pooling stride increases from 1 to 2, 4, and 8." /></a><figcaption class="has-text-centered">(a) Accuracy-latency trade-off</figcaption></figure>
+<figure><a href="static/images/pooling-block-latency.png" target="_blank" rel="noopener"><img src="static/images/pooling-block-latency.png" width="1200" height="1034" loading="lazy" decoding="async" alt="Mean latency per global attention block decreases with increased pooling stride on SemanticKITTI, nuScenes, and Waymo." /></a><figcaption class="has-text-centered">(b) Global block latency</figcaption></figure>
+<figure><a href="static/images/pooling-block-memory.png" target="_blank" rel="noopener"><img src="static/images/pooling-block-memory.png" width="1200" height="1034" loading="lazy" decoding="async" alt="Peak allocated memory for global and window blocks at different global pooling strides; solid lines are global blocks and dashed lines are window blocks." /></a><figcaption class="has-text-centered">(c) Attention block peak memory</figcaption></figure>
+</div>
+<figcaption class="has-text-centered">Effect of global pooling stride <i>s</i> (w/o TTA).<br>(a) Waymo mIoU (gray bars) and full-model latency (orange line), with separate training per stride under the same protocol.<br>(b) Mean latency per global block. (c) Peak allocated memory for global (solid) and window (dashed) attention blocks.</figcaption>
+</figure>
+<div class="content mt-4"><p>
+On Waymo, pooling reduced full-model latency and, at <i>s</i> = 2, even improved mIoU over full-resolution global attention.
+For <i>s</i> ≥ 2, peak memory during global blocks fell below that of window blocks, while further pooling provided only modest additional reductions in global block memory.
+</p></div>
+</div>
+<div id="ablation-rope" role="tabpanel" aria-labelledby="tab-ablation-rope" tabindex="0" hidden>
+<div class="content"><h4 class="title is-5">How Should RoPE Dimensions Be Allocated Across 3D Axes?</h4></div>
+<p class="result-caption has-text-centered" id="table-rope-axis-allocation-ablation-caption">Axial RoPE allocation ablation (w/o TTA, mIoU / mAcc, %).</p>
+<div class="table-container"><table aria-describedby="table-rope-axis-allocation-ablation-caption" aria-labelledby="tab-ablation-rope" class="table is-striped is-hoverable is-fullwidth is-narrow" id="table-rope-axis-allocation-ablation">
+
+<thead>
+<tr><th rowspan="2" scope="col">RoPE</th><th class="has-text-right" rowspan="2" scope="col">#Heads</th><th class="has-text-right" rowspan="2" scope="col">Head dim.</th><th class="has-text-right" rowspan="2" scope="col"><i>d</i><sub>x</sub></th><th class="has-text-right" rowspan="2" scope="col"><i>d</i><sub>y</sub></th><th class="has-text-right" rowspan="2" scope="col"><i>d</i><sub>z</sub></th><th class="has-text-centered" colspan="3" scope="colgroup">nuScenes</th><th class="has-text-centered" colspan="3" scope="colgroup">ScanNet</th></tr>
+<tr><th class="has-text-right" scope="col">#Params</th><th class="has-text-right" scope="col">mIoU</th><th class="has-text-right" scope="col">mAcc</th><th class="has-text-right" scope="col">#Params</th><th class="has-text-right" scope="col">mIoU</th><th class="has-text-right" scope="col">mAcc</th></tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Axial (symmetric)</th>
+<td class="has-text-right">16</td>
+<td class="has-text-right">18</td>
+<td class="has-text-right">6</td>
+<td class="has-text-right">6</td>
+<td class="has-text-right">6</td>
+<td class="has-text-right">10.0M</td>
+<td class="has-text-right">79.8</td>
+<td class="has-text-right">87.3</td>
+<td class="has-text-right">9.7M</td>
+<td class="has-text-right">75.2</td>
+<td class="has-text-right">84.0</td>
+</tr>
+<tr>
+<th scope="row">Axial (symmetric)</th>
+<td class="has-text-right">16</td>
+<td class="has-text-right">24</td>
+<td class="has-text-right">8</td>
+<td class="has-text-right">8</td>
+<td class="has-text-right">8</td>
+<td class="has-text-right">16.5M</td>
+<td class="has-text-right">80.6</td>
+<td class="has-text-right">87.3</td>
+<td class="has-text-right">15.9M</td>
+<td class="has-text-right">75.7</td>
+<td class="has-text-right">84.2</td>
+</tr>
+<tr>
+<th scope="row">Axial (asymmetric)</th>
+<td class="has-text-right">16</td>
+<td class="has-text-right">20</td>
+<td class="has-text-right">6</td>
+<td class="has-text-right">6</td>
+<td class="has-text-right">8</td>
+<td class="has-text-right">12.0M</td>
+<td class="has-text-right">80.1</td>
+<td class="has-text-right">86.8</td>
+<td class="has-text-right">11.6M</td>
+<td class="has-text-right">75.4</td>
+<td class="has-text-right"><strong>84.3</strong></td>
+</tr>
+<tr class="has-background-light">
+<th scope="row">Axial (asymmetric)</th>
+<td class="has-text-right">16</td>
+<td class="has-text-right">22</td>
+<td class="has-text-right">8</td>
+<td class="has-text-right">8</td>
+<td class="has-text-right">6</td>
+<td class="has-text-right">14.1M</td>
+<td class="has-text-right">80.6</td>
+<td class="has-text-right"><strong>87.4</strong></td>
+<td class="has-text-right">13.6M</td>
+<td class="has-text-right"><strong>76.0</strong></td>
+<td class="has-text-right"><strong>84.3</strong></td>
+</tr>
+<tr>
+<th scope="row">Axial (asymmetric)</th>
+<td class="has-text-right">16</td>
+<td class="has-text-right">26</td>
+<td class="has-text-right">10</td>
+<td class="has-text-right">10</td>
+<td class="has-text-right">6</td>
+<td class="has-text-right">19.1M</td>
+<td class="has-text-right"><strong>80.8</strong></td>
+<td class="has-text-right">87.2</td>
+<td class="has-text-right">18.4M</td>
+<td class="has-text-right">75.5</td>
+<td class="has-text-right">84.0</td>
+</tr>
+</tbody>
+</table></div>
+<figure id="fig-rope-window-geometry" class="mt-5"><a href="static/images/rope-window-geometry.png" target="_blank" rel="noopener"><img src="static/images/rope-window-geometry.png" width="1801" height="411" loading="lazy" decoding="async" alt="Spatial extents of representative ScanNet and nuScenes scenes and their serialized windows, showing larger horizontal than vertical extents." /></a><figcaption class="has-text-centered">Spatial extents of representative scenes (metres) and serialized windows (grid cells) on ScanNet (left) and nuScenes (right).<br>Dashed lines connect the selected window in each scene to its corresponding window view. Window extents include empty grid cells.</figcaption></figure>
+<div class="content mt-4"><p>
+The 8:8:6 allocation matched 8:8:8 on nuScenes and outperformed it on ScanNet with fewer parameters, consistent with the larger horizontal than vertical extents observed in the point clouds and attention regions.
+These results suggest that RoPE dimensions need not be allocated symmetrically across the three spatial axes.
+</p></div>
+</div>
+</div>
+</section>
+</div>
+</section>
     </main>
     <footer class="footer">
       <div class="container">
